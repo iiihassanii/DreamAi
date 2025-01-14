@@ -1,6 +1,6 @@
-const express = require('express');
-const { dreaminterpreter } = require('../controllers/dreamController.js');;
-dreamRoute = express.Router();
+import express from 'express';
+import { dreaminterpreter } from '../controllers/dreamController.js';
+const dreamRoute = express.Router();
 
 dreamRoute.post('/dreaminterpreter', async (req, res) => {
     try {
@@ -17,4 +17,4 @@ dreamRoute.post('/dreaminterpreter', async (req, res) => {
     }
   });
 
-module.exports = dreamRoute;
+  export default dreamRoute;

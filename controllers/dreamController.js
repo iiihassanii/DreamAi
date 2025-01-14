@@ -1,12 +1,13 @@
-const dotenv = require('dotenv');
-const { CohereClientV2 } = require('cohere-ai');
+import dotenv from 'dotenv';
+import { CohereClientV2 } from 'cohere-ai';
+
 
 dotenv.config();
 const cohere = new CohereClientV2({
   token: process.env.COHERE_API_KEY,
 });
 
-const dreaminterpreter = async ( content) => {
+export const dreaminterpreter = async ( content) => {
   const response = await cohere.chat({
     model: 'command-r-plus',
     messages: [
@@ -30,4 +31,4 @@ const dreaminterpreter = async ( content) => {
   return(response);
 };
   
-  module.exports = { dreaminterpreter }; // Export as an object (named export)
+  
